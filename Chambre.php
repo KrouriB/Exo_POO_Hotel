@@ -6,6 +6,9 @@ class Chambre
     private float $prixChambre;
     private bool $WifiChambre;
     private bool $etatChambre;
+    private int $nbLit;
+    private DateTime $dateDebutReserve;
+    private DateTime $dateFinReserve;
 }
 
 ?>

@@ -10,6 +10,8 @@ class Hotel
     private int $nbChambre;
     private int $dispoChambre;
     private int $reservchambre;
+    private int $nbReservation;
+    private Chambre $appartenant;
 }
 
 ?>
