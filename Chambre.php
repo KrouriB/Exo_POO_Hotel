@@ -9,6 +9,7 @@ class Chambre
     private int $nbLit;
     private DateTime $dateDebutReserve;
     private DateTime $dateFinReserve;
+    private Hotel $appartenance;
 }
 
 ?>

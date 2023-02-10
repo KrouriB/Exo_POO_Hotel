@@ -7,7 +7,6 @@ class Client
     private int $nbReservation;
     private DateTime $dateDebutReserve;
     private DateTime $dateFinReserve;
-    private Hotel $appartenance;
 }
 
 ?>
