@@ -9,9 +9,21 @@ class Hotel
     private int $codePostal;
     private int $nbChambre;
     private int $dispoChambre;
-    private int $reservchambre;
-    private int $nbReservation;
-    private Chambre $appartenant;
+    private int $reservChambre;
+    private array $chambres;
+
+    public function __construct(string $groupe, string $nom, string $ville, string $adresse, int $codePostal)
+    {
+        $this->groupe = $groupe;
+        $this->nom = $nom;
+        $this->ville = $ville;
+        $this->adresse = $adresse;
+        $this->codePostal = $codePostal;
+        $this->nbChambre = 0;
+        $this->dispoChambre = $this->nbChambre;
+        $this->reservChambre = $this->nbChambre - $this->dispoChambre;
+        $this->chambres = [];
+    }
 }
 
 ?>
