@@ -24,6 +24,16 @@ class Hotel
         $this->reservChambre = $this->nbChambre - $this->dispoChambre;
         $this->chambres = [];
     }
+
+    public function ajoutChambre($uneChambre)
+    {
+        $this->chambres[] = $uneChambre;
+    }
+
+    public function combienChambre()
+    {
+        return count($this->chambres);
+    }
 }
 
 ?>
