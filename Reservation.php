@@ -58,6 +58,12 @@ class Reservation
         return $this->lachambre;
     }
 
+    public function tempsReservation()
+    {
+        $tempsReservation = date_diff($this->datedebut, $this->datefin);
+        return intval($tempsReservation->format('d'));
+    }
+
     public function __toString()
     {
         return " - du ".$this->datedebut->format('d-m-Y')." au ".$this->datefin->format('d-m-Y');
