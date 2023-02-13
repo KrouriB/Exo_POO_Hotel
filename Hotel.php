@@ -67,42 +67,52 @@ class Hotel
         $this->chambres[] = $uneChambre;
     }
 
+    public function ajoutReservation($uneReservation)
+    {
+        $this->reservation[] = $uneReservation;
+    }
+    
+    // fonction pour avoir le nombre de chambre de l'hotel
+
     public function combienChambre()
     {
         return count($this->chambres);
     }
 
-    public function ajoutReservation($uneReservation)
-    {
-        $this->reservation[] = $uneReservation;
-    }
+    // fonction pour compter le nombre de chambr dispo
 
-    // fonction pour afficher les info d'un hotel
-
-    public function afficherInfoHotel()
+    public function combienChambreDispo()
     {
-        $reserv = 0;
         $dispo = 0;
-        $display = "<h2>$this</h2>"."<br>";
-        $display .= $this->adresse." ".$this->codePostal." ".strtoupper($this->ville)."<br>";
-        $display .= "Nombre de chambre : ".$this->combienChambre()."<br>";
         foreach ($this->chambres as $uneChamcre)
         {
             if ($uneChambre->get_etatChambre == true)
             {
                 $dispo++;
             }
-            else
-            {
-                $reserv++;
-            }
         }
-        $display .= "Nombre de chambre résrvées : ".$reserv."<br>";
-        $display .= "Nombre de chambre dispo : ".$dispo."<br><br>";
+        return $dispo
+    }
+
+    // fonction pour afficher les info d'un hotel
+
+    public function afficherInfoHotel()
+    {
+        $display = "<h2>$this</h2><br>";
+        $display .= $this->adresse." ".$this->codePostal." ".strtoupper($this->ville)."<br>";
+        $display .= "Nombre de chambre : ".$this->combienChambre()."<br>";
+        $display .= "Nombre de chambre résrvées : ".$this->combienChambre-$this->combienChambreDispo."<br>";
+        $display .= "Nombre de chambre dispo : ".$this->combienChambreDispo."<br><br>";
         echo $display;
     }
 
     // fonction pour afficher les reservation dans un hotel
+
+    // public function afficherReservationHotel()
+    // {
+    //     $display = "<h3>Réservation de l'hôtel< $this/h3><br>";
+    //     $display .="<p style='text-align:center;display:flex'><span style='background-color:green;color:white;padding:0.5% 1%'></span></p>"
+    // }
 
     // fonction pour afficher les chambre d'un hotel
 
