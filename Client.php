@@ -54,6 +54,18 @@ class Client
 
     // fonction pour afficher les reservation d'une personne
 
+    public function afficherReservationClient()
+    {
+        $display = "<h3>Réservation de < $this/h3><br>";
+        $display .="<p style='text-align:center;display:flex'><span style='background-color:green;color:white;padding:0.5% 1%'>".$this->combienReservation()." ".strtoupper("Réservations")."</span></p>"
+        foreach ($this->reservation as $uneReservation)
+        {
+            $display .= "<strong>Hotel : ".$uneReservation->lachambre->hotel." / </strong>".$uneReservation->lachambre." (".$uneReservation->lachambre->nbLit." lits - ".$uneReservation->lachambre->prixChambre." € - Wifi : ".$uneReservation->lachambre->affichageWifi(false).") ".$uneReservation."<br>";
+        }
+        $display .= "Total : ".$uneReservation->tempsReservation()*$uneReservation->lachambre->prixChambre." € <br><br>";
+        echo $display;
+    }
+
     public function __toString()
     {
         return $this->prenom." ".$this->nom ;
