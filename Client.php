@@ -45,9 +45,14 @@ class Client
         $this->reservation[] = $uneReservation;
     }
 
+    // fonction pour savoir le nombre de reservation
+
+    public function combienReservation()
+    {
+        return count($this->reservation);
+    }
+
     // fonction pour afficher les reservation d'une personne
-
-
 
     public function __toString()
     {
