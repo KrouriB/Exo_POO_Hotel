@@ -81,7 +81,25 @@ class Hotel
 
     public function afficherInfoHotel()
     {
-
+        $reserv = 0;
+        $dispo = 0;
+        $display = "<h2>$this</h2>"."<br>";
+        $display .= $this->adresse." ".$this->codePostal." ".strtoupper($this->ville)."<br>";
+        $display .= "Nombre de chambre : ".$this->combienChambre()."<br>";
+        foreach ($this->chambres as $uneChamcre)
+        {
+            if ($uneChambre->get_etatChambre == true)
+            {
+                $dispo++;
+            }
+            else
+            {
+                $reserv++;
+            }
+        }
+        $display .= "Nombre de chambre résrvées : ".$reserv."<br>";
+        $display .= "Nombre de chambre dispo : ".$dispo."<br><br>";
+        echo $display;
     }
 
     // fonction pour afficher les reservation dans un hotel
