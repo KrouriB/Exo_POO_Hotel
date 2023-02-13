@@ -76,6 +76,24 @@ class Hotel
     {
         $this->reservation[] = $uneReservation;
     }
+
+    // fonction pour afficher les info d'un hotel
+
+    public function afficherInfoHotel()
+    {
+
+    }
+
+    // fonction pour afficher les reservation dans un hotel
+
+    // fonction pour afficher les chambre d'un hotel
+
+
+
+    public function __toString()
+    {
+        return $this->groupe." ".$this->nom." ".$this->ville ;
+    }
 }
 
 ?>

@@ -68,6 +68,11 @@ class Chambre
     {
         return $this->hotel;
     }
+
+    public function __toString()
+    {
+        return "Chambre ".$this->numChambre ;
+    }
 }
 
 ?>

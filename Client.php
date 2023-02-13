@@ -44,6 +44,15 @@ class Client
     {
         $this->reservation[] = $uneReservation;
     }
+
+    // fonction pour afficher les reservation d'une personne
+
+
+
+    public function __toString()
+    {
+        return $this->prenom." ".$this->nom ;
+    }
 }
 
 ?>
