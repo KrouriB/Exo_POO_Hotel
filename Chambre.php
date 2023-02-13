@@ -69,6 +69,28 @@ class Chambre
         return $this->hotel;
     }
 
+    public function affichageWifi(bool $valeur) // true = image , false = texte
+    {
+        if ($valeur == false)
+        {
+            if ($this->etatChambre == true)
+            {
+                return "oui";
+            }
+            else
+            {
+                return "non";
+            }
+        }
+        else
+        {
+            if ($this->etatChambre == true)
+            {
+                return "<img src='img/wifi-solid.svg'>"
+            }
+        }
+    }
+
     public function __toString()
     {
         return "Chambre ".$this->numChambre ;
