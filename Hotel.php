@@ -114,7 +114,7 @@ class Hotel
         $display .="<p style='text-align:center;display:flex'><span style='background-color:green;color:white;padding:0.5% 1%'>".$this->combienChambre-$this->combienChambreDispo." ".strtoupper("Réservations")."</span></p>" //TODO: a ajouter pour la class client
         foreach ($this->reservation as $uneReservation)
         {
-            $display .= $uneReservation."<br>";
+            $display .= $uneReservation->leclient." - "$uneReservation->lachambre.$uneReservation."<br>";
         }
         $display .= "<br>";
         echo $display;

@@ -60,7 +60,7 @@ class Reservation
 
     public function __toString()
     {
-        return $this->leclient." - "$this->lachambre." - du ".$this->datedebut->format('d-m-Y')." au ".$this->datefin->format('d-m-Y');
+        return " - du ".$this->datedebut->format('d-m-Y')." au ".$this->datefin->format('d-m-Y');
     }
 }
 
