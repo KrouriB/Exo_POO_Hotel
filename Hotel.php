@@ -110,14 +110,20 @@ class Hotel
 
     public function afficherReservationHotel()
     {
-        $display = "<h3>Réservation de l'hôtel< $this/h3><br>";
-        $display .="<p style='text-align:center;display:flex'><span style='background-color:green;color:white;padding:0.5% 1%'>".$this->combienChambre-$this->combienChambreDispo." ".strtoupper("Réservations")."</span></p>" //TODO: a ajouter pour la class client
-        foreach ($this->reservation as $uneReservation)
+        if (sizeof($this->reservation) > 0)
         {
-            $display .= $uneReservation->leclient." - "$uneReservation->lachambre.$uneReservation."<br>";
+            $display = "<h3>Réservation de l'hôtel< $this/h3><br>";
+            $display .="<p style='text-align:center;display:flex'><span style='background-color:green;color:white;padding:0.5% 1%'>".$this->combienChambre-$this->combienChambreDispo." ".strtoupper("Réservations")."</span></p>" //TODO: a ajouter pour la class client
+            foreach ($this->reservation as $uneReservation)
+            {
+                $display .= $uneReservation->leclient." - "$uneReservation->lachambre.$uneReservation."<br>";
+            }
+            $display .= "<br>";
+            echo $display;
         }
-        $display .= "<br>";
-        echo $display;
+        else{
+            echo "Cette hôtel n'as pas de reservation.";
+        }
     }
 
     // fonction pour afficher les chambre d'un hotel

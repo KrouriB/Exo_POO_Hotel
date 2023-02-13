@@ -56,14 +56,21 @@ class Client
 
     public function afficherReservationClient()
     {
-        $display = "<h3>Réservation de < $this/h3><br>";
-        $display .="<p style='text-align:center;display:flex'><span style='background-color:green;color:white;padding:0.5% 1%'>".$this->combienReservation()." ".strtoupper("Réservations")."</span></p>"
-        foreach ($this->reservation as $uneReservation)
+        if (sizeof($this->reservation) > 0)
         {
-            $display .= "<strong>Hotel : ".$uneReservation->lachambre->hotel." / </strong>".$uneReservation->lachambre." (".$uneReservation->lachambre->nbLit." lits - ".$uneReservation->lachambre->prixChambre." € - Wifi : ".$uneReservation->lachambre->affichageWifi(false).") ".$uneReservation."<br>";
+            $display = "<h3>Réservation de < $this/h3><br>";
+            $display .="<p style='text-align:center;display:flex'><span style='background-color:green;color:white;padding:0.5% 1%'>".$this->combienReservation()." ".strtoupper("Réservations")."</span></p>"
+            foreach ($this->reservation as $uneReservation)
+            {
+                $display .= "<strong>Hotel : ".$uneReservation->lachambre->hotel." / </strong>".$uneReservation->lachambre." (".$uneReservation->lachambre->nbLit." lits - ".$uneReservation->lachambre->prixChambre." € - Wifi : ".$uneReservation->lachambre->affichageWifi(false).") ".$uneReservation."<br>";
+            }
+            $display .= "Total : ".$uneReservation->tempsReservation()*$uneReservation->lachambre->prixChambre." € <br><br>";
+            echo $display;
         }
-        $display .= "Total : ".$uneReservation->tempsReservation()*$uneReservation->lachambre->prixChambre." € <br><br>";
-        echo $display;
+        else
+        {
+            echo "Cette personne n'as pas de réservation.";
+        }
     }
 
     public function __toString()
