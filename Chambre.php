@@ -86,7 +86,11 @@ class Chambre
         {
             if ($this->etatChambre == true)
             {
-                return "<img src='img/wifi-solid.svg'>"
+                return "<img src='img/wifi-solid.svg'>";
+            }
+            else
+            {
+                return " ";
             }
         }
     }
