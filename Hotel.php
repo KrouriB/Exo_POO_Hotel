@@ -8,6 +8,7 @@ class Hotel
     private string $adresse;
     private int $codePostal;
     private array $chambres;
+    private array $reservation;
 
     public function __construct(string $groupe, string $nom, string $ville, string $adresse, int $codePostal)
     {
@@ -17,6 +18,7 @@ class Hotel
         $this->adresse = $adresse;
         $this->codePostal = $codePostal;
         $this->chambres = [];
+        $this->reservation = [];
     }
 
     public function set_groupe(string $valeur)
@@ -68,6 +70,11 @@ class Hotel
     public function combienChambre()
     {
         return count($this->chambres);
+    }
+
+    public function ajoutReservation($uneReservation)
+    {
+        $this->reservation[] = $uneReservation;
     }
 }
 

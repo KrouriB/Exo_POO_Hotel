@@ -19,9 +19,9 @@ class Reservation
             $this->datedebut = new DateTime($ladatedebut);
             $this->datefin = new DateTime($ladatefin);
             $this->leclient = $leclient;
-            $this->leclient->AjoutReservation($this); // future fonction qui stockera les objet reservation d'un objet client
+            $this->leclient->ajoutReservation($this); // future fonction qui stockera les objet reservation d'un objet client
             $this->lachambre->set_etatChambre(false); //mettre l'etat de la chambre comme occupé via une fonction set
-            $this->lachambre->get_hotel()->AjoutReservation($this); // future fonction qui stockera les objet reservation d'un objet hotel par rapport a ces chambre
+            $this->lachambre->get_hotel()->ajoutReservation($this); // future fonction qui stockera les objet reservation d'un objet hotel par rapport a ces chambre
         } 
     }
     
