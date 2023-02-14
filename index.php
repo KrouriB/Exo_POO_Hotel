@@ -13,9 +13,9 @@ spl_autoload_register(function ($class_name) {
     require_once $class_name . '.php';
 });
 
-$ib = new Hotel("Ibis","Disney","Paris","55 avenue Bisou-Nourse",95000);
-$f1 = new Hotel("F1","Europa Park","Rust","28 rue de l'Europe",77977);
-$hi = new Hotel("Hilton","Double Tree","Dubai","The Walk - Dubai Marina",00000);
+$ib = new Hotel("Ibis","Disney","Paris","55 avenue Bisou-Nourse","95000");
+$f1 = new Hotel("F1","Europa Park","Rust","28 rue de l'Europe","77977");
+$hi = new Hotel("Hilton","Double Tree","Dubai","The Walk - Dubai Marina","00000");
 
 $ci1 = new Chambre(450,true,$ib,4);
 $ci2 = new Chambre(100,false,$ib,1);
@@ -44,10 +44,14 @@ $r_cf8_p2 = new Reservation("01-01-2022","31-03-2022",$p2,$cf8);
 $ib->afficherInfoHotel();
 $ib->afficherReservationHotel();
 $ib->afficherChambreHotel();
-
 $f1->afficherInfoHotel();
 $f1->afficherReservationHotel();
 $f1->afficherChambreHotel();
-
+$hi->afficherInfoHotel();
+$hi->afficherReservationHotel();
+$hi->afficherChambreHotel();
+$p1->afficherReservationClient();
+$p2->afficherReservationClient();
+$p3->afficherReservationClient();
 
 ?>
