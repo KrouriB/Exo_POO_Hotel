@@ -112,11 +112,11 @@ class Hotel
     {
         if (sizeof($this->reservation) > 0)
         {
-            $display = "<h3>Réservation de l'hôtel< $this/h3><br>";
+            $display = "<h3>Réservation de l'hôtel $this</h3><br>";
             $display .="<p style='text-align:center;display:flex'><span style='background-color:green;color:white;padding:0.5% 1%'>".$this->combienChambre-$this->combienChambreDispo." ".strtoupper("Réservations")."</span></p>";
             foreach ($this->reservation as $uneReservation)
             {
-                $display .= $uneReservation->get_leclient()." - ".$uneReservation->get_lachambre().$uneReservation."<br>";
+                $display .= $uneReservation->get_leclient()." - ".$uneReservation->get_lachambre()." -".$uneReservation."<br>";
             }
             $display .= "<br>";
             echo $display;
@@ -127,8 +127,6 @@ class Hotel
     }
 
     // fonction pour afficher les chambre d'un hotel
-
-
 
     public function __toString()
     {

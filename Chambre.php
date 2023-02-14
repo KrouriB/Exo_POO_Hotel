@@ -103,7 +103,7 @@ class Chambre
         }
         else
         {
-            return "<p style='text-align:center;display:flex'><span style='background-color:green;color:white;padding:0.5% 1%'>".strtoupper("réservations")."</span></p>";
+            return "<p style='text-align:center;display:flex'><span style='background-color:red;color:white;padding:0.5% 1%'>".strtoupper("réservée")."</span></p>";
         }
     }
 

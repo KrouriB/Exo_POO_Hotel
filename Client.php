@@ -62,7 +62,7 @@ class Client
             $display .="<p style='text-align:center;display:flex'><span style='background-color:green;color:white;padding:0.5% 1%'>".$this->combienReservation()." ".strtoupper("Réservations")."</span></p>"
             foreach ($this->reservation as $uneReservation)
             {
-                $display .= "<strong>Hotel : ".$uneReservation->lachambre->get_hotel()." / </strong>".$uneReservation->get_lachambre()." (".$uneReservation->lachambre->get_nbLit()." lits - ".$uneReservation->lachambre->get_prixChambre()." € - Wifi : ".$uneReservation->lachambre->affichageWifi(false).") ".$uneReservation."<br>";
+                $display .= "<strong>Hotel : ".$uneReservation->lachambre->get_hotel()." / </strong>".$uneReservation->get_lachambre()." (".$uneReservation->lachambre->get_nbLit()." lits - ".$uneReservation->lachambre->get_prixChambre()." € - Wifi : ".$uneReservation->lachambre->affichageWifi(false).")".$uneReservation."<br>";
             }
             $display .= "Total : ".$uneReservation->tempsReservation()*$uneReservation->lachambre->get_prixChambre()." € <br><br>";
             echo $display;
