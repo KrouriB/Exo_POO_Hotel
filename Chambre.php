@@ -95,6 +95,18 @@ class Chambre
         }
     }
 
+    public function affichageEtat()
+    {
+        if ($this->etatChambre == true)
+        {
+            return "<p style='text-align:center;display:flex'><span style='background-color:green;color:white;padding:0.5% 1%'>".strtoupper("disponible")."</span></p>";
+        }
+        else
+        {
+            return "<p style='text-align:center;display:flex'><span style='background-color:green;color:white;padding:0.5% 1%'>".strtoupper("réservations")."</span></p>";
+        }
+    }
+
     public function __toString()
     {
         return "Chambre ".$this->numChambre ;
