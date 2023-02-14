@@ -58,7 +58,7 @@ class Client
     {
         if (sizeof($this->reservation) > 0)
         {
-            $display = "<h3>Réservation de < $this/h3><br>";
+            $display = "<h3>Réservation de < $this/h3>";
             $display .="<p style='text-align:center;display:flex'><span style='background-color:green;color:white;padding:0.5% 1%'>".$this->combienReservation()." ".strtoupper("Réservations")."</span></p>";
             foreach ($this->reservation as $uneReservation)
             {

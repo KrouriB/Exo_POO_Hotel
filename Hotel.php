@@ -84,9 +84,9 @@ class Hotel
     public function combienChambreDispo()
     {
         $dispo = 0;
-        foreach ($this->chambres as $uneChamcre)
+        foreach ($this->chambres as $uneChambre)
         {
-            if ($uneChambre->get_etatChambre == true)
+            if ($uneChambre->get_etatChambre() == true)
             {
                 $dispo++;
             }
@@ -98,11 +98,11 @@ class Hotel
 
     public function afficherInfoHotel()
     {
-        $display = "<h2>$this</h2><br>";
+        $display = "<h2>$this</h2>";
         $display .= $this->adresse." ".$this->codePostal." ".strtoupper($this->ville)."<br>";
         $display .= "Nombre de chambre : ".$this->combienChambre()."<br>";
-        $display .= "Nombre de chambre résrvées : ".$this->combienChambre-$this->combienChambreDispo."<br>";
-        $display .= "Nombre de chambre dispo : ".$this->combienChambreDispo."<br><br>";
+        $display .= "Nombre de chambre résrvées : ".$this->combienChambre()-$this->combienChambreDispo()."<br>";
+        $display .= "Nombre de chambre dispo : ".$this->combienChambreDispo()."<br><br>";
         echo $display;
     }
 
@@ -112,8 +112,7 @@ class Hotel
     {
         if (sizeof($this->reservation) > 0)
         {
-            $display = "<h3>Réservation de l'hôtel $this</h3><br>";
-            $display .="<p style='text-align:center;display:flex'><span style='background-color:green;color:white;padding:0.5% 1%'>".$this->combienChambre-$this->combienChambreDispo." ".strtoupper("Réservations")."</span></p>";
+            $display = "<h3>Réservation de l'hôtel $this <br><p style='text-align:center;display:flex'><span style='background-color:green;color:white;padding:0.5% 1%'>".$this->combienChambre()-$this->combienChambreDispo()." ".strtoupper("Réservations")."</span></p></h3><br>";
             foreach ($this->reservation as $uneReservation)
             {
                 $display .= $uneReservation->get_leclient()." - ".$uneReservation->get_lachambre()." -".$uneReservation."<br>";
@@ -130,23 +129,24 @@ class Hotel
 
     public function afficherChambreHotel()
     {   
-        $display = "Statuts des chambres de ".$this;
-        $display .= "<br><table><tr style='border-bottom: 1px solid grey'>";
+        $display = "<br>Statuts des chambres de ".$this;
+        $display .= "<table style='width:33%'><thead><tr>";
         $display .= "<th>CHAMBRE</th>";
-        $display .= "<th>PRIX</th>";
+        $display .= "<th>PRIX/NUIT</th>";
         $display .= "<th>WIFI</th>";
         $display .= "<th>ETAT</th>";
-        $display .= "</tr><br>";
+        $display .= "</tr></thead><tbody>";
         foreach ($this->chambres as $uneLigne)
         {
             $display .= "<tr style='border-bottom: 1px solid grey'>";
-            $display .= "<td>".$uneLigne."</td>";
-            $display .= "<td>".$uneLigne->get_prix()."</td>";
-            $display .= "<td>".$uneLigne->affichageWifi(true)."</td>";
-            $display .= "<td>".$uneLigne->affichageEtat()."</td>";
+            $display .= "<td style='text-align:center'>".$uneLigne."</td>";
+            $display .= "<td style='text-align:center'>".$uneLigne->get_prixChambre()." €</td>";
+            $display .= "<td style='text-align:center'>".$uneLigne->affichageWifi(true)."</td>";
+            $display .= "<td style='display:flex;justify-content: center;'>".$uneLigne->affichageEtat()."</td>";
             $display .= "</tr><br>";
         }
-        $display .= "<br>";
+        $display .= "</tbody><br>";
+        echo $display;
     }
 
     public function __toString()
