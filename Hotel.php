@@ -128,6 +128,28 @@ class Hotel
 
     // fonction pour afficher les chambre d'un hotel
 
+    public function afficherChambreHotel()
+    {   
+        $display = "Statuts des chambres de ".$this;
+        $display .= "<br><table>",
+        "<tr style='border-bottom: 1px solid grey'>",
+        "<th>CHAMBRE</th>",
+        "<th>PRIX</th>",
+        "<th>WIFI</th>",
+        "<th>ETAT</th>",
+        "</tr><br>";
+        foreach ($this->chambres as $uneLigne)
+        {
+            $display .= "<tr style='border-bottom: 1px solid grey'>",
+            "<td>".$uneLigne."</td>",
+            "<td>".$uneLigne->get_prix()."</td>",
+            "<td>".$uneLigne->affichageWifi(true)."</td>",
+            "<td>".$uneLigne->affichageEtat()."</td>",
+            "</tr><br>";
+        }
+        $display .= "<br>";
+    }
+
     public function __toString()
     {
         return $this->groupe." ".$this->nom." ".$this->ville ;
