@@ -69,7 +69,7 @@ class Client
         }
         else
         {
-            echo "Cette personne n'as pas de réservation.";
+            echo "Cette personne n'as pas de réservation.<br>";
         }
     }
 

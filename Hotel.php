@@ -121,7 +121,7 @@ class Hotel
             echo $display;
         }
         else{
-            echo "Cette hôtel n'as pas de reservation.";
+            echo "Cette hôtel n'as pas de reservation.<br>";
         }
     }
 
