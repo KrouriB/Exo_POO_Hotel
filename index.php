@@ -1,3 +1,12 @@
+<style>
+*
+{
+    margin: 1%;
+    padding: 0;
+    box-sizing: border-box;
+}
+</style>
+
 <?php
 
 spl_autoload_register(function ($class_name) {
@@ -20,7 +29,7 @@ $cf6 = new Chambre(467,true,$f1,3);
 $cf7 = new Chambre(400,false,$f1,4);
 $cf8 = new Chambre(633,true,$f1,4);
 $ch1 = new Chambre(488.12,true,$hi,3);
-$ch1 = new Chambre(888.23,true,$hi,8);
+$ch2 = new Chambre(888.23,true,$hi,8);
 
 $p1 = new Client("Oliva","Florian");
 $p2 = new Client("Mathieu","Léa Jeanne");
@@ -32,6 +41,13 @@ $r_ci1_p1 = new Reservation("08-08-2021","24-08-2021",$p1,$ci2);
 $r_cf4_p2 = new Reservation("08-08-2021","31-08-2021",$p2,$cf4);
 $r_cf8_p2 = new Reservation("01-01-2022","31-03-2022",$p2,$cf8);
 
+$ib->afficherInfoHotel();
+$ib->afficherReservationHotel();
+$ib->afficherChambreHotel();
+
+$f1->afficherInfoHotel();
+$f1->afficherReservationHotel();
+$f1->afficherChambreHotel();
 
 
 ?>
