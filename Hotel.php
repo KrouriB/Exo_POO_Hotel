@@ -143,9 +143,9 @@ class Hotel
             $display .= "<td style='text-align:center'>".$uneLigne->get_prixChambre()." €</td>";
             $display .= "<td style='text-align:center'>".$uneLigne->affichageWifi(true)."</td>";
             $display .= "<td style='display:flex;justify-content: center;'>".$uneLigne->affichageEtat()."</td>";
-            $display .= "</tr><br>";
+            $display .= "</tr>";
         }
-        $display .= "</tbody><br>";
+        $display .= "</tbody></table><br>";
         echo $display;
     }
 
