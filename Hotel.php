@@ -131,21 +131,20 @@ class Hotel
     public function afficherChambreHotel()
     {   
         $display = "Statuts des chambres de ".$this;
-        $display .= "<br><table>",
-        "<tr style='border-bottom: 1px solid grey'>",
-        "<th>CHAMBRE</th>",
-        "<th>PRIX</th>",
-        "<th>WIFI</th>",
-        "<th>ETAT</th>",
-        "</tr><br>";
+        $display .= "<br><table><tr style='border-bottom: 1px solid grey'>";
+        $display .= "<th>CHAMBRE</th>";
+        $display .= "<th>PRIX</th>";
+        $display .= "<th>WIFI</th>";
+        $display .= "<th>ETAT</th>";
+        $display .= "</tr><br>";
         foreach ($this->chambres as $uneLigne)
         {
-            $display .= "<tr style='border-bottom: 1px solid grey'>",
-            "<td>".$uneLigne."</td>",
-            "<td>".$uneLigne->get_prix()."</td>",
-            "<td>".$uneLigne->affichageWifi(true)."</td>",
-            "<td>".$uneLigne->affichageEtat()."</td>",
-            "</tr><br>";
+            $display .= "<tr style='border-bottom: 1px solid grey'>";
+            $display .= "<td>".$uneLigne."</td>";
+            $display .= "<td>".$uneLigne->get_prix()."</td>";
+            $display .= "<td>".$uneLigne->affichageWifi(true)."</td>";
+            $display .= "<td>".$uneLigne->affichageEtat()."</td>";
+            $display .= "</tr><br>";
         }
         $display .= "<br>";
     }
