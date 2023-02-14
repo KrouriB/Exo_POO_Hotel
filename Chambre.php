@@ -73,7 +73,7 @@ class Chambre
     {
         if ($valeur == false)
         {
-            if ($this->etatChambre == true)
+            if ($this->wifiChambre == true)
             {
                 return "oui";
             }
@@ -84,7 +84,7 @@ class Chambre
         }
         else
         {
-            if ($this->etatChambre == true)
+            if ($this->wifiChambre == true)
             {
                 return "<img src='img/wifi-solid.svg' style='height:1rem'>";
             }
