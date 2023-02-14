@@ -6,11 +6,11 @@ class Hotel
     private string $nom;
     private string $ville;
     private string $adresse;
-    private int $codePostal;
+    private string $codePostal;
     private array $chambres;
     private array $reservation;
 
-    public function __construct(string $groupe, string $nom, string $ville, string $adresse, int $codePostal)
+    public function __construct(string $groupe, string $nom, string $ville, string $adresse, string $codePostal)
     {
         $this->groupe = $groupe;
         $this->nom = $nom;
@@ -53,7 +53,7 @@ class Hotel
     {
         return $this->adresse;
     }
-    public function set_codePostal(int $valeur)
+    public function set_codePostal(string $valeur)
     {
         return $this->codePostal = $valeur;
     }
