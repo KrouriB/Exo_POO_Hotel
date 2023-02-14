@@ -61,7 +61,7 @@ class Reservation
     public function tempsReservation()
     {
         $tempsReservation = date_diff($this->datedebut, $this->datefin);
-        return intval($tempsReservation->format('d'));
+        return $tempsReservation->days;
     }
 
     public function __toString()
