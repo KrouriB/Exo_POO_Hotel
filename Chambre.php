@@ -99,11 +99,11 @@ class Chambre
     {
         if ($this->etatChambre == true)
         {
-            return "<p style='text-align:center;display:flex'><span style='background-color:green;color:white;padding:3% 6%'>".strtoupper("disponible")."</span></p>";
+            return "<p style='text-align:center;display:flex'><span style='background-color:green;color:white;padding:3% 6%'>".mb_strtoupper("disponible")."</span></p>";
         }
         else
         {
-            return "<p style='text-align:center;display:flex'><span style='background-color:red;color:white;padding:3% 6%'>".strtoupper("réservée")."</span></p>";
+            return "<p style='text-align:center;display:flex'><span style='background-color:red;color:white;padding:3% 6%'>".mb_strtoupper("réservée")."</span></p>";
         }
     }
 
